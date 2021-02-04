@@ -1,0 +1,41 @@
+.parent {
+    border: 2px;
+}
+.main-border {
+    border: 2px solid rgb(82, 82, 161);
+    height: auto;
+    .image-class {
+        background-image: url('college.jpg');
+        height: 200px;
+    }
+    .text-class {
+        font-weight: 500;
+    }
+    .red-txt {
+        color: red;
+    }
+    .center-class {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        font-weight: bold;
+    }
+    .login-class {
+        background-color: rgb(87, 87, 199);
+        box-shadow: 0 1px 6px rgb(57 73 76 / 25%);
+        width: 50%;
+        .login {
+            text-align: left;
+
+        }
+        .reset {
+            text-align: right;
+
+        }
+    }
+    .skip-login {
+        cursor: pointer;
+    }
+}

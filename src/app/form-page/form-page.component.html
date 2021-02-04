@@ -1,0 +1,93 @@
+<div class="main-border">
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <div id="container">
+        <div>
+            <h2 class="text-center">{{deptName}}</h2>
+
+            <div class="row mt-3 ml-1 mr-1">
+                <div class="col-lg-4">
+                    <label class="text-class">FIRST NAME*: </label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text"  formControlName="firstname" class="form-control" placeholder="Enter your first name" [maxlength]="30" (keypress)="forbiddenNumber($event)" >
+                </div>
+            </div>    
+
+            <div class="row mt-3  ml-1 mr-1">
+                <div class="col-lg-4">
+                    <label class="text-class">LAST NAME*: </label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" formControlName="lastname" class="form-control" placeholder="Enter your last name" [maxlength]="30" (keypress)="forbiddenNumber($event)" >
+                </div>
+            </div> 
+
+            <div class="row mt-3 ml-1 mr-1">
+                <div class="col-lg-4">
+                    <label class="text-class">EMAIL*: </label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" formControlName="email" class="form-control" placeholder="Enter your email" [maxlength]="30" (keypress)="forbiddenNumber($event)" >
+                </div>
+            </div> 
+
+            <div class="row mt-3 ml-1 mr-1">
+                <div class="col-lg-4">
+                    <label class="text-class">MOBILE NO.: </label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" formControlName="mobileno" class="form-control" placeholder="Enter your mobile no" [maxlength]="10" (keypress)="numbersOnly($event)" >
+                </div>
+            </div> 
+
+            <div class="row mt-3 ml-1 mr-1">
+                <div class="col-lg-4">
+                    <label class="text-class">GENDER: </label>
+                </div>
+                <div class="col-lg-4">
+                    <div>
+                        <input id="male" type="radio" value="male" name="gender" formControlName="gender" >
+                        <label for="male" class="gender">Male</label>
+                     </div>
+                </div>
+                <div class="col-lg-4">
+                    <div>
+                        <input id="female" type="radio" value="female" name="gender" formControlName="gender" >
+                        <label for="female" class="gender">Female</label>
+                     </div>
+                </div>
+
+               
+              
+                
+            </div> 
+
+            <div class="row mt-3 ml-1 mr-1">
+                <div class="col-lg-4">
+                    <label class="text-class">OCCUPATION: </label>
+                </div>
+                <div class="col-lg-8">
+                    <select formControlName="occupation" class="select-class" (change)="selectChange($event)">
+                        <option *ngFor="let occup of occupation">{{occup}}</option>
+                    </select>   
+                    <div *ngIf="selectedValue=='Others'">
+                        <input type="text" formControlName="occupation" placeholder="Any Other Occupation">
+                    </div> 
+                   <!-- {{selectedValue}} -->
+                </div>
+            </div> 
+ 
+    </div> 
+      
+      <div class="row mt-3 mb-3">
+        <div class="col-lg-6">
+            <button class="login-class login center-class" type="submit" [disabled]="!regForm.valid">LOGIN</button>
+      </div>
+      <div class="col-lg-6">
+            <button class="login-class reset center-class" type="reset" (click)="resetFunction()">RESET</button>
+        
+      </div>
+      </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <!-- <app-login>vvbvbv</app-login> -->
+  
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+     
+     
+     <div class="parent-div ml-2 mr-2" *ngIf="loginPage">
+      <div class="main-border m-2 p-2">
+      <h2 class="center-class mt-2">LOGIN</h2>
+     <div class="image-class"></div>
+     
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div id="container">
+        <div>
+        <div>
+            <label class="text-class">USERNAME: </label>
+            <input type="text" id="username"  formControlName="username" class="form-control" placeholder="Enter your Username">
+              <p *ngIf="submitted && l.username.errors.required" class="red-txt">UserName is required</p>
+        </div>
+
+        <div>
+            <label class="text-class">PASSWORD: </label>
+            <input type="password" id="password"  formControlName="password" class="form-control" placeholder="Enter your Password">
+            <p *ngIf="submitted && l.password.errors.required" class="red-txt">Password is required</p>
+        </div>
+       </div> 
+      
+      <div class="row mt-3">
+        <div class="col-lg-6">
+            <button class="login-class login center-class" type="submit">LOGIN</button>
+      </div>
+      <div class="col-lg-6">
+            <button class="login-class reset center-class" type="reset" (click)="resetFunction()">RESET</button>
+        
+      </div>
+      </div>
+        <div class="row">
+        <a class="center-class skip-login" (click)="gotoDashboard()">Skip Login</a>
+        </div>
+    </div>
+</form>
+</div>
+
+</div>
+      <router-outlet></router-outlet>
+<div class="col-lg-3"></div>
+</div>
+</div>
+
+
+</div>

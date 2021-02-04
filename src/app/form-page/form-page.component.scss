@@ -1,0 +1,32 @@
+.main-border {
+    border: 2px solid rgb(82, 82, 161);
+    height: auto;
+    .select-class {
+    width: inherit;
+}
+.gender {
+    margin-left: 10px;
+}
+.center-class {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    font: bold;
+}
+.text-class {
+    font-weight: 500;
+}
+.login-class {
+    background-color: rgb(87, 87, 199);
+    box-shadow: 0 1px 6px rgb(57 73 76 / 25%);
+    width: 50%;
+    .login {
+        text-align: left;
+    }
+    .reset {
+        text-align: right;
+    }
+}
+}
